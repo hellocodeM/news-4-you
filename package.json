@@ -1,6 +1,6 @@
 {
   "name": "news-4-you",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "new recommendation",
   "main": "index.js",
   "scripts": {
