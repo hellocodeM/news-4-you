@@ -4,12 +4,13 @@
   "description": "new recommendation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "dependencies": {
-	  "site-watcher": "1.0.1",
+	  "site-watcher": "*",
 	  "spiderer": "*",
-	  "mongous": "*"
+	  "mongous": "*",
+	  "easy-readability": "*"
   },
   "repository": {
     "type": "git",
