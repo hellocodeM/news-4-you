@@ -26,3 +26,8 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Scala module
+scala/project/
+scala/target/
+*.class
