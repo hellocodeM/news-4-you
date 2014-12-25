@@ -1,21 +1,23 @@
 package com.wanghuanming.news4you
 
-import com.wanghuanming.TFIDF
-import scala.io.Source._
 import com.mongodb.casbah.Imports._
+import com.wanghuanming.TFIDF
+import java.io.PrintWriter
 
-object keywordsExtraction {
+object dumpCorpus {
   def main(args: Array[String]) = {
-    val news = MongoClient("localhost", 27017)("news")
+    val news = MongoClient()("news")
     news.authenticate("ming", "00")
     val articles = news("resource.article")
-    val cursor = articles.find()
+    var i = 0
+    val cursor = articles.find(MongoDBObject(), MongoDBObject("content" -> 1))
     
     while (cursor.hasNext) {
+      i += 1
       val doc = cursor.next
-      val keywords = TFIDF.getKeywords(stripTags(doc.getAsOrElse("content", "")), 10, "/opt/data/corpus")
-      val res = doc ++ ("keywords" -> keywords.map(_._1))
-      articles.save(res)
+      val writer = new PrintWriter("/opt/data/corpus/article" + i) 
+      writer.println(doc("content"))
+      writer.close
     }
   }
 
