@@ -14,7 +14,7 @@ object keywordsExtraction {
     while (cursor.hasNext) {
       val doc = cursor.next
       val keywords = TFIDF.getKeywords(stripTags(doc.getAsOrElse("content", "")), 10, "/opt/data/corpus")
-      val res = doc ++ ("keywords" -> keywords.map(_._1))
+      val res = doc ++ ("keywords" -> keywords)
       articles.save(res)
     }
   }
