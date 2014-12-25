@@ -1,0 +1,29 @@
+{
+  "name": "news-4-you",
+  "version": "0.0.1",
+  "description": "new recommendation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "dependencies": {
+	  "site-watcher": "*",
+	  "spiderer": "*",
+	  "mongous": "*",
+	  "easy-readability": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HelloCodeMing/news-4-you"
+  },
+  "keywords": [
+    "news",
+    "recommentdation"
+  ],
+  "author": "huanming wong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HelloCodeMing/news-4-you/issues"
+  },
+  "homepage": "https://github.com/HelloCodeMing/news-4-you"
+}
