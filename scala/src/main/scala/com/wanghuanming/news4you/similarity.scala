@@ -28,10 +28,12 @@ object similariry {
   }
 
 
-  def similar(A: List[BasicDBList], B: List[BasicDBList]) = {
+  def similar(A: List[BasicDBList], B: List[BasicDBList]): Double = {
     val mapA = A.map(list => list(0).toString -> list(1).toString.toDouble).toMap
     val mapB = B.map(list => list(0).toString -> list(1).toString.toDouble).toMap
     val share = mapA.map(_._1).toList.union(mapB.map(_._1).toList).distinct
+    if (share.length == 0)
+      return 0.0
     val sum = share.map { word =>
       mapA.getOrElse(word, 0.0) * mapB.getOrElse(word, 0.0)
     }.reduce(_ + _)
@@ -43,6 +45,6 @@ object similariry {
       val self = mapB.getOrElse(word, 0.0)
       self * self
     }.reduce(_ + _)
-    sum / (Math.sqrt(sumA) * Math.sqrt(sumB))
+    Math.cos(sum / (Math.sqrt(sumA) * Math.sqrt(sumB)))
   }
 }
