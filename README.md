@@ -8,7 +8,7 @@ Data collecting and analysis has finished, right now I am working on the front-e
 ## Tech
 - Data collecting: [spiderer](https://github.com/HelloCodeMing/spiderer)
 - Database: MongoDB
-- Feature extraction: TFIDF and cosine similarity.
+- Feature extraction: [TFIDF](https://github.com/HelloCodeMing/scala-tfidf) and cosine similarity.
 - Recommendation: content-based on the early stage, maybe use item-based or other algorithms later.
 - Front-end: [express](https://github.com/strongloop/express) in node.js
 - Language: node.js and Scala.
