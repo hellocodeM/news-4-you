@@ -1,6 +1,5 @@
 ## news-4-you
 ==========
-## Description
 Article recommendation, based on the user's history.
 
 ## Status
