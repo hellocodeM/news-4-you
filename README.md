@@ -3,7 +3,7 @@
 Article recommendation, based on the user's history.
 
 ## Status
-Data collecting and analysis has finished, I am working on the front-end.
+Data collecting and analysis has finished, right now I am working on the front-end.
 
 ## Tech
 - Data collecting: [spiderer](https://github.com/HelloCodeMing/spiderer)
