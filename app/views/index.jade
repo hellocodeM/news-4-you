@@ -1,5 +1,13 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .header
+    h1= title
+  .left
+    h3 recommend for you
+  .main
+    ul
+    each article in articles
+      li 
+        h3= article.title
+        p= article.digest

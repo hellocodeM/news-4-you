@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+.main {
+    padding-left: 400px;
+}
+
+.left {
+
+}
+
+.header {
+    margin: auto;
+    text-align: center;
+}

@@ -33,3 +33,6 @@ scala/target/
 *.class
 *.cache
 scala/lib/
+
+# config
+config/
