@@ -1,18 +1,37 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .main {
-    padding-left: 400px;
-    width: 960px;
+    margin: auto;
+    width: 720px;
 }
 
 .degist {
+    font-size: 14px;
+    padding: 5px;
+    padding-left: 10px;
+}
+
+.keywords {
+    padding: 10px;
+    text-align: center;
+}
+
+.keywords span  {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.content {
+    padding: 20px;
 }
 
 .left {

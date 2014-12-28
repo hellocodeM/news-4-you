@@ -4,4 +4,7 @@ block content
   .header
     h1= title
   .main
-    p= content
+    .keywords 关键词:
+      each key in keywords
+        span= key
+    .content!= content

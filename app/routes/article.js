@@ -8,16 +8,19 @@ var ObjectID = require('../../lib/objectid').ObjectID;
 var property = yaml.safeLoad(fs.readFileSync('../config/property.yaml', 'utf-8'));
 
 /* GET home page. */
-router.get('/:_id', function(req, res) {
+router.get('/:articleid', function(req, res) {
     db('news.$cmd').auth(property.user, property.passwd, function(r) {
         console.log(r);
-        var _id = new ObjectID(req.params._id);
-        db('news.resource.article').find({_id : _id}, 1, function(reply) {
-            console.log(reply);
+        var articleid = parseInt(req.params.articleid);
+        db('news.resource.article').find({articleid : articleid}, 1, function(reply) {
             var doc = reply.documents[0];
-            console.log(doc);
             if (!doc)
-                doc = { title: 'oops', content: 'we can not find the article you want' };
+                doc = { title: 'oops', content: 'we can not find the article you want', keywords: [] };
+            else {
+                doc.keywords = doc.keywords.map(function(keyword) {
+                    return keyword[0];
+                });
+            }
             res.render('article', doc);
         });
     });

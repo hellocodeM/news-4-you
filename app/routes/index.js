@@ -10,13 +10,16 @@ var util = require('../../lib/util');
 router.get('/', function(req, res) {
     db('news.$cmd').auth(property.user, property.passwd, function(r) {
         console.log(r);
-        db('news.resource.article').find({}, 10, function(reply) {
+        // select 10 documents randomly
+        var start = Math.floor(Math.random() * 1000);
+        console.log(start);
+        db('news.resource.article').find({articleid: {$gt: start}}, 10, function(reply) {
             var documents = reply.documents.map(function(doc) {
                 // title, content
                 return {
                     title: doc.title,
-                    digest: util.stripTags(doc.content).slice(0, 30),
-                    link: '/article/' + doc._id
+                    digest: util.stripTags(doc.content).substring(0, 40),
+                    link: '/article/' + doc.articleid
                 };
             })
             var varibles = {};
