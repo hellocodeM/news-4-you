@@ -34,7 +34,10 @@ import com.mongodb.casbah.Imports._
 //  def fromBson(o: MongoDBObject) = {
 //    Article(
 //      _id = o.as[ObjectId]("_id"),
-//      
+//      title = o.as[String]("title"),
+//      content = o.as[String]("content"),
+//      keywords = o.as[List[List]]("keywords"),
+//      articleid = o.as[Double]("articleid").toInt
 //    )
 //  }
 //}
