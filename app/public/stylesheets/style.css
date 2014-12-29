@@ -10,6 +10,12 @@ ul {
     list-style-type: none;
 }
 
+.header {
+    margin: auto;
+    text-align: center;
+}
+
+/* index */
 .main {
     margin: auto;
     width: 720px;
@@ -21,6 +27,7 @@ ul {
     padding-left: 10px;
 }
 
+/* article */
 .keywords {
     padding: 10px;
     text-align: center;
@@ -34,11 +41,7 @@ ul {
     padding: 20px;
 }
 
-.left {
+.recommend {
+    text-align: left;
 
-}
-
-.header {
-    margin: auto;
-    text-align: center;
 }

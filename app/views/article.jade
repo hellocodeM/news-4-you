@@ -8,7 +8,8 @@ block content
       each key in keywords
         span= key
     .content!= content
-    .recommend 相关推荐:
+    .recommend 
+      h3 相关推荐：
       ul
         each recommend in recommends
           li: a(href='#{recommend.link}') #{recommend.title}
