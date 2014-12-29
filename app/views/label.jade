@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  header
+    h1 labels
+  .main
+    ul
+    each label in labels
+      h3= label.keyword
+      each article in label.articles
+        p: a(href!= article.link) #{article.title}
