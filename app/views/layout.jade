@@ -5,6 +5,22 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.css')
   body
-    block content
-    script(src='http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js')
-    script(src='http://cbd.bootcss.com/jquery/2.1.1/jquery.min.js')
+      block navbar
+        nav#navbar.navbar.navbar-default(role="navigation")
+          .container-fluid
+            // brand
+            a.navbar-brand(href = "/") news for you 
+            small.navbar-text recommend based on your interest
+            // collpase
+            .collapse.navbar-collapse#collapse1
+              ul.nav.navbar-nav
+                li: a(href="/label") labels
+                li: a(href="/account") my account
+                a.navbar-btn.btn.btn-default.navbar-right(href="/signin") sign in
+
+      block content
+      script(src='http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js')
+      script(src='http://cbd.bootcss.com/jquery/2.1.1/jquery.min.js')
+      block footer
+        footer: small copyright by &nbsp;
+          a(href='wanghuanming.com') Hello Code

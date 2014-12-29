@@ -10,11 +10,19 @@ ul {
     list-style-type: none;
 }
 
-.header {
+header {
     margin: auto;
     text-align: center;
 }
 
+footer {
+    text-align: center;
+}
+
+#navbar {
+    width: 720px;
+    margin: auto;
+}
 /* index */
 .main {
     margin: auto;
@@ -45,3 +53,4 @@ ul {
     text-align: left;
 
 }
+
