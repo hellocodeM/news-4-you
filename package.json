@@ -10,7 +10,8 @@
 	  "site-watcher": "*",
 	  "spiderer": "*",
 	  "mongous": "*",
-	  "easy-read": "*"
+	  "easy-read": "*",
+      "needle": "*"
   },
   "repository": {
     "type": "git",
