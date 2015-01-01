@@ -18,4 +18,6 @@ At first, I try to develop a news discovery tool based on location. I thought fo
 
 But I met some difficulties on the first day, I failed to start the project, disappointingly. 
 
-Instead, I start this project, also interested and not beyond my ability. I have worked on it for two weeks, maybe several days later I will finish it. It's really challenging to use Scala in a project, and mixed with node.js. 
+Instead, I start this project, also interested and not beyond my ability. I have worked on it for two weeks, right now it finally finished. It's really challenging to use Scala in a project, and mixed with node.js. 
+
+I learned a lot from this project, and tomorrow, I will start another project.
