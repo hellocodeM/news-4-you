@@ -6,8 +6,8 @@ object TransformMatrix {
   def main(args: Array[String]) = {
     val news = MongoClient()("news")
     news.authenticate("ming", "00")
-    val articles = news("resource.article")
-    val label = news("recommend.label")
+    val articles = news("resource.article2")
+    val label = news("recommend.label2")
 
     articles.flatMap { article =>
       val keywords = article.as[List[BasicDBList]]("keywords")
