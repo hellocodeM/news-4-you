@@ -45,8 +45,8 @@ object similariry {
   def main(args: Array[String]) = {
     val news = MongoClient()("news")
     news.authenticate("ming", "00")
-    val articles = news("resource.article")
-    val recommend = news("recommend.similar")
+    val articles = news("resource.article2")
+    val recommend = news("recommend.similar2")
     val matrix = articles.find().toList
     
     matrix.foreach { article =>

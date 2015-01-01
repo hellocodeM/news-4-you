@@ -1,13 +1,13 @@
 // mongo script
 
-//var index = 1;
-//var cursor = db.resource.article.find();
-//while (cursor.hasNext()) {
-//    var doc = cursor.next();
-//    doc.articleid = index++;
-//    db.resource.article.save(doc);
-//}
-//
+var index = 1;
+var cursor = db.resource.article2.find();
+while (cursor.hasNext()) {
+    var doc = cursor.next();
+    doc.articleid = index++;
+    db.resource.article2.save(doc);
+}
+
 
 //var cursor = db.recommend.similar.find();
 //while (cursor.hasNext()) {
@@ -20,10 +20,3 @@
 //    db.recommend.similar.save(doc);
 //}
 
-var cursor = db.resource.article.find();
-var articleid = 1;
-while (cursor.hasNext()) {
-    var doc = cursor.next();
-    doc.articleid = articleid++;
-    db.resource.save(doc);
-}

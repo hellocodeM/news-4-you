@@ -4,18 +4,18 @@ import com.wanghuanming.TFIDF
 import scala.io.Source._
 import com.mongodb.casbah.Imports._
 
-import java.io.File
+import java.io.{File, PrintWriter}
 
 object keywordsExtraction {
   def main(args: Array[String]) = {
     val news = MongoClient("localhost", 27017)("news")
     news.authenticate("ming", "00")
-    val articles = news("resource.article")
+    val articles = news("resource.article2")
 
     // dump corpus if not exists
-    if (! (new File("/opt/data/corpus").exists)) {
+    if (new File("/opt/data/corpus").listFiles.length == 0) {
       val cursor = articles.find()
-      val i = 1
+      var i = 1
 
       while (cursor.hasNext) {
         val doc = cursor.next
