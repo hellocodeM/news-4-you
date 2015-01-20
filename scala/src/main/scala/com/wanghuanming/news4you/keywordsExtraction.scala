@@ -14,6 +14,7 @@ object keywordsExtraction {
 
     // dump corpus if not exists
     if (new File("/opt/data/corpus").listFiles.length == 0) {
+      println("start dump corpus")
       val cursor = articles.find()
       var i = 1
 
@@ -25,11 +26,11 @@ object keywordsExtraction {
         i += 1
       }
     }
-    val cursor = articles.find()
     // extract keywords
+    val cursor = articles.find()
     while (cursor.hasNext) {
       val doc = cursor.next
-      val keywords = TFIDF.getKeywords(stripTags(doc.getAsOrElse("content", "")), 10, "/opt/data/corpus")
+      val keywords = TFIDF.getKeywords(stripTags(doc.as[String]("content")), 10, "/opt/data/corpus")
         val res = doc ++ ("keywords" -> keywords)
         articles.save(res)
       }

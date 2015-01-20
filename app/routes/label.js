@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
     db('news.$cmd').auth(property.user, property.passwd, function(r) {
         console.log(r);
         var start = Math.floor(Math.random() * 7000);
-        db('news.recommend.label').find({}, 10, start, function(reply) {
+        db(property.database.label).find({}, 10, start, function(reply) {
             var docs = reply.documents;
             async.map(docs, function(label, cb) {
                 var keyword  = label.label;
@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
                 
                 // query title and link for each article
                 async.map(articles, function(articleid, callback) {
-                    db('news.resource.article').find({articleid: articleid}, 1, function(reply2) {
+                    db(property.database.article).find({articleid: articleid}, 1, function(reply2) {
                         var doc = reply2.documents[0];
                         callback(null, {title: doc.title, link: '/article/' + articleid});
                     });
