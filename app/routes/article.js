@@ -18,9 +18,12 @@ router.get('/:articleid', function(req, res) {
                 doc = { title: 'oops', content: 'we can not find the article you want', keywords: [] };
             else {
                 // find the keywords
-                doc.keywords = doc.keywords.map(function(keyword) {
-                    return keyword[0];
-                });
+                if (doc.keywords)
+                    doc.keywords = doc.keywords.map(function(keyword) {
+                        return keyword[0];
+                    });
+                else
+                    doc.keywords = [];
                 // find the articleid of similar articles and find the meta data or these articles
                 db(property.database.similar).find({articleid: doc.articleid}, function(reply2) {
                     async.map(reply2.documents[0].similar, function(arti, cb) {
